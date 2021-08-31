@@ -1,0 +1,11 @@
+Watch out for xss
+
+1. Have a subdomain that runs the javascript. 
+These are the oldest known way to prevent against JS threats. Same origin policy - if you are running on s.io.com you cant access io.com.
+set an http only on session cookie. Set http_only to true. 
+
+2. Must stop unwanted AJAX request, would need session cookie to do so. 
+
+3. CSRF token
+
+4. Execute in iframe.

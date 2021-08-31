@@ -1,0 +1,19 @@
+.__algo-product-page{
+    .__char-wrapper{
+        height: 123px;
+        >img{
+            max-height: 100%;
+        }
+    }
+    .__product-page-rating-table{
+        tr{
+            margin-top: 2em;
+        }
+        td{
+            padding: 2em 3em 0 0;
+        }
+    }
+    @media (max-width: 1400px) {
+        padding-right: 0 !important;
+    }
+}

@@ -1,0 +1,59 @@
+@import '../../colors.scss';
+
+.__input-file{
+    position: relative;
+    width: 15em;
+    border-radius: 0.6em;
+    input{
+        display: none;
+        &.__danger + .__shown-message{
+            border-color: $danger;
+            color: $danger;
+        }
+    }
+    .__shown-message{
+        border: 2px dashed;
+        padding: 2em;
+        z-index: 1;
+        border-radius: 0.6em;
+        background-size: cover;
+    }
+    svg{
+        width: 4em;
+        max-height: 4em;
+        margin: 0.3em 0 1em 0;
+    }
+    .__on-file-added-message{
+        display: none;
+    }
+    &.__image-is-added .__shown-message{
+        color: inherit !important;
+    }
+    &.__image-is-added, &.__file-is-added{
+        color: transparent;
+        .__shown-message{
+            color: transparent;
+            .__green-text{
+                color: transparent;
+            }
+            border: none;
+            padding: calc(2em + 2px);
+        }
+        .__on-file-added-message{
+            display: block;
+        }
+        .__alert{
+            display: none !important;
+        }
+    }
+    &.__file-is-added{
+        color: #000;
+        .__shown-message{
+            background-color: $lightgrey-2;;
+            padding: calc(2em + 2px);
+            border: none;
+            color: #000 !important;
+            border-color: #000;
+        }
+    }
+}

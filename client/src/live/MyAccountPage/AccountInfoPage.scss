@@ -1,0 +1,14 @@
+.__account-info-page{
+    table{
+        border-collapse: collapse;
+        td{
+            padding-right:  6em;
+            min-width: calc(184px + 6em) !important;
+            label{
+                display: block;
+                width: 100%;
+                height: 5em;
+            }
+        }
+    }
+}

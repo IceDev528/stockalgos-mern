@@ -1,0 +1,22 @@
+.__auth-Page {
+  height: 100vh;
+  > .__auth-wrapper {
+    width: 42%;
+    padding: 5em 8em;
+    min-width: 36em;
+  }
+  a.active {
+    font-size: 1.6em;
+    font-weight: bold;
+  }
+  .__forgot-password {
+    border-bottom: 1px solid;
+    display: inline-block;
+  }
+  .__red-text {
+    color: red;
+  }
+  .__hide {
+    display: none;
+  }
+}

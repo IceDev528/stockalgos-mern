@@ -1,0 +1,77 @@
+@import '../../colors.scss';
+ 
+.__Sell-An-Algo-Page{
+    form >.__right-form-part{
+        margin: 0 4em 0 8em;
+        @media (max-width: 1200px) {
+            margin: 0 0 0 4em;
+        }
+    }
+    .__alert{
+        display: none;
+        margin-top: 0.2em;
+    }
+    .__empty ~ .__alert{
+        display: block;
+    }
+    textarea.__empty ~ div{
+        color: $danger;
+    }
+}
+
+.__price-input-container{
+    .__price-input-field{
+        padding: 0.5em 0.5em 0.5em 1.5em;
+        min-width: 7.5em;
+        max-width: 7.5em;
+    }
+    .__hide{
+        visibility: hidden;
+    }
+    .__price-details{
+        position: relative;
+        &::before{
+            content: '$';
+            position: absolute;
+            font-size: 1.1em;
+            color: $grey;
+            font-weight: bold;
+            left: 0.5em;
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+    }
+    .__alert{
+        display: none;
+    }
+    >input[type=radio]{
+        &.__empty:checked{
+            +.__input-details{
+                .__alert{
+                    display: block !important;
+                }
+                // .__price-details::before{
+                //     color: $danger;
+                // }
+            }
+        }
+        +.__input-details{
+            .__alert{
+                display: none !important;
+            }
+        }
+    }
+}
+
+.__select-tags{
+    margin: -0.5em;
+    max-width: 17em;
+    >.__chip{
+        margin: 0.5em;
+    }
+}

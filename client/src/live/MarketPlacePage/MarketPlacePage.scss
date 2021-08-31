@@ -1,0 +1,34 @@
+@import '../../colors.scss';
+
+.__MarketPlace-Page{
+    .__search-box{
+        input::placeholder{
+            color: $grey;
+        }
+        border-radius: 0.4em 0 0 0.4em;
+    }
+    .__search-box-button{
+        padding: 0.4em;
+        border-radius: 0;
+        min-width: 5.2em;
+        border-radius: 0 0.4em 0.4em 0;
+    }
+    .__market-place-chips{
+        .__chip{
+            margin-right: 1em;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+    .__marketplace-stock-algos{
+        margin: -1em;
+        >*{
+            width: calc(20% - 2em);
+            margin: 1em;
+            @media (max-width: 1150px) {
+                width: calc(25% - 2em);
+            }
+        }
+    }
+}

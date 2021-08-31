@@ -1,0 +1,39 @@
+@import '../../colors.scss';
+
+.__SideBar-Wrapper{
+    width: 220px;
+    >.__SideBar{
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 220px;
+        background: linear-gradient($primary, $primaryWithDarkShade);
+        position: fixed;
+        color: #fff;
+        >.__main-logo{
+            max-width: 60%;
+        }
+        .__default-user{
+            width: 2.8em;
+        }
+        >a{
+            display: flex;
+            padding: 1.2em 2.8em;
+            align-items: center;
+            position: relative;
+            border-right: 0.45em solid transparent;
+            max-height: 56px;
+            svg{
+                margin-right: 1em;
+                width: 1.43em;
+            }
+            &:hover{
+                background: #BFD6F558;
+            }
+            &.active{
+                border-color: $secondary; 
+                background: #BFD6F558;
+            }
+        }   
+    }
+}

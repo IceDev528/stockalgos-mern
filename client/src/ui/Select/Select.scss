@@ -1,0 +1,68 @@
+@import '../../colors.scss';
+
+.__select-container{
+    position: relative;
+    margin-bottom: auto;
+    display: inline-block;
+    .__shown-value{
+        outline: none;
+        font-size: inherit;
+        font-family: inherit;
+        padding: 0.38em 1em;
+        border: none;
+        border-radius: 0.4em;
+        min-width: 160px;
+    }
+    input{
+        position: absolute !important;
+        z-index: -1;
+        visibility: hidden !important;
+        width: 0;
+        height: 0;
+    }
+    .__options-wrapper{
+        border-radius: 0.4em;
+        width: 100%;
+        left: 0;
+        position: absolute;
+        top: 100%;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s all;
+        &.__show{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    .__options{
+        padding: 0.8em 0;
+        border-radius: 0.7em;
+        box-shadow: 2px 4px 3px rgba($color: #000000, $alpha: 0.16);
+        text-align: center;
+        >div{
+            padding: 0.4em;
+            cursor: pointer;
+            &:hover{
+                background: rgba($color: $grey, $alpha: 0.1);
+            }
+        }
+    }
+    .__chevron-up{
+        height: 1em;
+        margin: auto;
+        width: 2.1em;
+        overflow: hidden;
+        position: relative;
+        &::after{
+            top: 0.3em;
+            left: 0.3em;
+            content: '';
+            width: 1.4em;
+            height: 1.4em;
+            position: absolute;
+            background: $lightgrey-2;
+            transform: rotate(45deg);
+            box-shadow: 2px 4px 3px rgba($color: #000000, $alpha: 0.16);
+        }
+    }
+}

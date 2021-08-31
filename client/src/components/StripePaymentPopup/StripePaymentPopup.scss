@@ -1,0 +1,14 @@
+@import './../../colors.scss';
+
+.__stripe-payment-popup{
+    .StripeElement{
+        border: 1px solid $grey !important;
+        border-radius: 0.5em;
+        padding: 0.6em;
+        min-width: 170px;
+        margin: 0;
+    }
+    .__stripe-btn{
+        min-width: 160px;
+    }
+}

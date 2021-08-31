@@ -1,0 +1,49 @@
+@import '../../colors.scss';
+
+.__Earning-Info-Page{
+    .__earnings-card{
+        >.__f1{
+            border-right: 1px solid $grey;
+            &:last-child{
+                border: none;
+            }
+        }
+    }
+    .__earning-details-header{
+        border-bottom: 1px solid;
+    }
+    .__footer{
+        line-height: normal;
+    }
+    .__on-off-text{
+        width: 2em;
+    }
+}
+
+.__earned-card{
+    border-bottom: 1px solid $lightgrey;
+    &:first-child{
+        border-color: $grey;
+    }
+    .__circle-earning{
+        &::before{
+            content: '';
+            width: 0.4em;
+            height: 0.4em;
+            background: currentColor;
+            border-radius: 50%;
+            margin-right: 0.4em;
+        }
+    }
+    .__earnedcard-earned-history{
+        overflow: hidden;
+        height: 0;
+        transition: linear 0.2s all;
+        opacity: 0;
+        border: 1px solid transparent;
+    }
+    &.show .__earnedcard-earned-history{
+        height: 8.5em;
+        opacity: 1;
+    }
+}

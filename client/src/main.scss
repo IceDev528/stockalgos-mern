@@ -1,0 +1,331 @@
+
+@import './layouts.scss';
+@import './flex.scss';
+@import './colors.scss';
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.4em;
+    font-family: 'Roboto';
+    min-width: 1024px;
+    background: #FAFBFC;
+}
+.__big-title{
+    font-size: 3.61em;
+    font-weight: 500;
+    transform: scale(1.13, 1);
+    margin: 0 0.47em;
+    line-height: 1.25em;
+}
+.__logo{
+    width: 180px;
+    max-width: 100%;
+    display: block;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+.__input{
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+.__input-field-small{
+    border: 1px solid $grey !important;
+    border-radius: 0.5em;
+
+    padding: 0.4em 0.5em;
+
+    min-width: 170px;
+    margin: 0;
+    width: 100%;
+}
+.__switch{
+    height: 1.8em;
+    width: 3.3em;
+    @extend .__relative;
+    cursor: pointer;
+    border: 1px solid purple;
+    &::before, &::after{
+        position: absolute;
+        content: '';
+        border-radius: 1.8em;
+        transition: 0.2s all;
+        top: 0;
+        left: 0;
+    }
+    &::before{
+        height: 100%;
+        width: 100%;
+        background: $darkgrey;
+    }
+    &::after{
+        background: #fff;
+        width: calc(1.8em - 4px);
+        height: calc(1.8em - 4px);
+        margin: 2px;
+    }
+    &:checked{
+        &::before{
+            background: $green;
+        }
+        &::after{
+            left: calc(100% - 1.8em);
+        }
+    }
+}
+.__input-field{
+    border: 1px solid $grey;
+    font-family: inherit;
+    border-radius: 0.4em;
+    padding: 1.1em 1em 0.9em 1em;
+    font-size: inherit;
+    position: relative;
+    display: block;
+    margin: 1em 0;
+    outline: none;
+    width: 100%;
+    width: 100%;
+    &.no-brdr {
+        border:0px; 
+        margin:0px;
+        padding: 0 0rem;
+    }
+    &::placeholder{
+        color: $grey;
+        font-weight: 300;
+        font-size: 1.15em;
+    }
+    &.__danger{
+        border-color: $danger;
+        &::placeholder{
+            color: $danger;
+        }
+    }
+}
+.__btn{
+    border: 2px solid $green;
+    outline: none;
+    background: $green;
+    color: #fff;
+    padding: 0.7em 1em;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 0.5em;
+    display: block;
+    min-width: 8em;
+    outline: none;
+    cursor: pointer;
+    &:disabled{
+        background: $darkgrey-2;
+        color: #000;
+        cursor: not-allowed !important;
+        border-color: $darkgrey-2;
+    }
+    &.__primary-text, &.__green-text{
+        background: #fff;
+    }
+    &.__large-btn{
+        padding: 0.9em 1.2em;
+        min-width: 10em;
+    }
+}
+.__green{
+    background: $green;
+    color: #fff;
+}
+.__green-text{
+    cursor: pointer;
+    color: $green;
+    font-weight: 500;
+}
+.__bold{
+    font-weight: 700;
+}
+.__light-bold{
+    font-weight: 500;
+}
+.__bolder{
+    font-weight: bolder;
+}
+.__h3{
+    font-size: 1.3em;
+}
+.__h4{
+    font-size: 1.2em;
+}
+.__h5{
+    font-size: 1.1em;   
+}
+.__h1{
+    font-size: 2em;
+}
+.__h2{
+    font-size: 1.6em;
+}
+.__big-heading{
+    font-size: 2.2em;
+}
+.__sub-title{
+    font-size: 0.9em;
+}
+.__small{
+    font-size: 0.9em;
+    line-height: 1.3em;
+}
+.__smaller{
+    font-size: 0.8em;
+    line-height: 1.3em;
+}
+svg{
+    width: 1em;
+    fill: currentColor;
+    min-width: 16px;
+}
+.__radius{
+    border-radius: 0.6em;
+}
+.__small-radius{
+    border-radius: 0.3em;
+}
+.__chip{
+    border: 1px solid $primary;
+    color: $primary;
+    border-radius: 1em;
+    padding: 0.1px 0.6em 0 0.4em;
+    cursor: pointer;
+}
+
+.__pointer{
+    cursor: pointer;
+}
+
+.__scrollbar{
+    overflow: auto;
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $lightgrey;
+        border-radius: 4px;
+    }
+}
+.__alert{
+    color: $danger;
+}
+.__card{
+    background: #fff;
+    border-radius: 0.4em;
+    padding: 1em;
+}
+
+.__secondary{
+    background: $secondary;
+}
+.__seconday-text{
+    color: $secondary;
+}
+.__primary{
+    background: $primary;
+    color: #fff
+}
+.__primary-text{
+    color: $primary;
+}
+.__primary-text-darken-1{
+    color: $primaryShade1;
+}
+
+.__grey{
+    background: $grey;
+}
+.__grey-text{
+    color: $grey;
+}
+.__lightgrey{
+    background: $lightgrey;
+}
+.__lightgrey-text{
+    color: $lightgrey;
+}
+.__lightgrey-2{
+    background: $lightgrey-2;
+}
+.__lightgrey-2-text{
+    color: $lightgrey-2;
+}
+.__dark-grey{
+    background: $darkgrey;
+}
+.__dark-grey-text{
+    color: $darkgrey;
+}
+
+.__dark-grey-2{
+    background: $darkgrey-2;
+}
+.__black-text{
+    color: #000;
+}
+.__absolute{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+.__relative{
+    position: relative;
+}
+.__checkbox{
+    position: relative;
+    visibility: hidden;
+    height: 16px;
+    width: 16px;
+    margin:  0 0 0 0;
+    &::before{
+        visibility: visible;
+        border: 1px solid $grey;
+        content: '';
+        @extend .__absolute;
+        border-radius: 0.3em;
+    }
+    &:checked{
+        &::after{
+            content: '\2713';
+            visibility: visible;
+            @extend .__absolute;
+            color: #000;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 18px;
+            left: 1px;
+        }
+        // visibility: visible;
+    }
+}
+.__view-source-file{
+    @extend .__green;
+    @extend .__pointer;
+    @extend .__center;
+    border-radius: 0.5em;
+    padding: 1.8em 0.8em 0.8em 0.8em;
+    margin-top: -1em;
+    &::after{
+        content: 'View Source File';
+    }
+    &.__large-view-source-file{
+        padding: 2.2em 1.2em 1.2em 1.2em;
+        margin-top: -1em;
+        border-radius: 0.8em;
+    }
+}

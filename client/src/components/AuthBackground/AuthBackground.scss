@@ -1,0 +1,19 @@
+.__Auth-Background{
+    background: transparent linear-gradient(180deg, #025ED7 0%, #012F6B 100%) 0% 0% no-repeat padding-box;
+    color: #FAFBFC;
+    padding: 4.5em;
+    >.__undraw-finance{
+        width: 30%;
+    }
+    >.__stock-charts{
+        width: 40%;
+    }
+    @media (min-height: 720px) {
+        >.__undraw-finance{
+            width: 40%;
+        }   
+        >.__stock-charts{
+            width: 60%;
+        }
+    }
+}

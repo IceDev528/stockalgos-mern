@@ -1,0 +1,30 @@
+@import '../../colors.scss';
+
+$width: 350px;
+
+.__Product-Payment-Panel{
+    width: $width;
+    .__payment-wrapper{
+        position: fixed;
+        width: $width;
+        height: 100%;
+        right: 0;
+        top: 0;
+    }
+    .__algo-product-file{
+        svg{
+            font-size: 3em;
+        }
+    }
+    .__alogo-payment-card{
+        background: #fff;
+        padding: 0.6em;
+        border-radius: 0.6em;
+    }
+    .__btn{
+        width: 100%;
+        &:not([disabled]) .__alogo-payment-card{
+            background: rgba($color: #fff, $alpha: 0.2);
+        }
+    }
+}

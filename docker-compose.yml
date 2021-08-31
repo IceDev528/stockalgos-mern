@@ -1,0 +1,63 @@
+version: '3.2'
+services:
+  web:
+    build: .
+    command: npm run start-dev
+    # use default docker0 interface, to make iptable management easier
+    network_mode: "bridge"
+    ports:
+      # prefaced with localhost, so external access is blocked, proxied behind nginx
+      - "127.0.0.1:5001:5001"
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - db
+    links:
+      - db:db
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+      - FSETID
+      - FOWNER
+      - DAC_OVERRIDE
+    environment:
+      - PORT=5001
+      - db_user=sfdeveloper
+      - db_pass=sfdev123
+      - db_env=db
+    env_file: .env
+  db:
+    image: mongo:4.0.9
+    # use default docker0 interface, to make iptable management easier
+    network_mode: "bridge"
+    shm_size: '20gb'
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+      - FSETID
+      - FOWNER
+      - DAC_OVERRIDE
+    volumes:
+      - type: volume
+        source: mongodb_data
+        target: /data/db
+        volume:
+          nocopy: true
+    ports:
+      # prefaced with localhost, so external access is blocked
+      - "127.0.0.1:27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=sfdeveloper
+      - MONGO_INITDB_ROOT_PASSWORD=sfdev123
+volumes:
+  # cache gems, so no need to re-install everything
+  # when new gems are introduced
+  bundle:
+  # used to persist DB data between docker restarts
+  mongodb_data:

@@ -1,0 +1,7 @@
+/client/build/static/**/*
+/node_modules/**/*
+/client/node_modules/**/*
+*.log*
+/client/src/main.css
+/client/src/live/components/opportunity_modules/main.css
+/client/src/live/components/user_opportunity_modules/main.css

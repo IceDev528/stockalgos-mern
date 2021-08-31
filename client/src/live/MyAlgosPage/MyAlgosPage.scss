@@ -1,0 +1,25 @@
+.__My-Algos-Page{
+    .__my-algos{
+        margin: -1.4em;
+        >.__StockAlgo-Item{
+            width: calc(33.33% - 2.8em);
+            margin: 1.4em;
+        }
+    }
+    .__left{
+        width: 60%;
+    }
+    .__myalgo-pending-box{
+        margin: 0 -4em -4em 2.8em;
+        border-radius: 0.5em;
+        padding: 2.8em;
+        min-height: calc(100vh - 9.5em);
+        .__my-pending-algos{
+            margin: -1.4em;
+            >.__StockAlgo-Item{
+                margin: 1.4em;
+                width: calc(50% - 2.8em);
+            }
+        }
+    }
+}

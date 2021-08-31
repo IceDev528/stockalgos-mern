@@ -1,0 +1,27 @@
+.__flex{
+    display: flex !important;
+    align-items: center;
+}
+.__flex-stretch{
+    display: flex;
+}
+.__sb{
+    justify-content: space-between;
+}
+.__wrap{
+    flex-wrap: wrap;
+    display: flex;
+}
+.__f1{
+    flex: 1;
+}
+.__col{
+    display: flex;
+    flex-direction: column;
+}
+.__flex-center{
+    justify-content: center;
+}
+.__flex-equal-space{
+    justify-content: space-around;
+}
